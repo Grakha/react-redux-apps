@@ -8,12 +8,17 @@ class SearchBar extends React.Component {
         this.setState({ term: event.target.value });
     };
 
+    onSubmitForm = (event) => {
+        event.preventDefault();
+
+        this.props.onFormSubmit(this.state.term);
+    };
+
     render() {
-        console.log(this.state.term);
         return (
-            <div className="search-bar row m-3 px-2 py-4 border border-secondary rounded">
-                <div className="col-10">
-                    <form>
+            <div className="search-bar row m-0 px-2 py-4 border border-secondary rounded">
+                <div className="col-12">
+                    <form onSubmit={this.onSubmitForm}>
                         <div className="form-group">
                             <label htmlFor="searchVideo">Youtube content:</label>
                             <input
