@@ -4,11 +4,10 @@ import axios from 'axios';
 
 const Search = () => {
 
-    const [term, setTerm] = useState('programming');
+    const [term, setTerm] = useState('');
     const [results, setResults] = useState([]);
     const [debouncedTerm, setDebouncedTerm] = useState(term);
 
-    console.log(results);
 
     useEffect(() => {
 
