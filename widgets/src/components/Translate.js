@@ -4,13 +4,13 @@ import Convert from "./Convert";
 import "./Translate.css";
 
 
-// const API_KEY = "AIzaSyCHUCmpR7cT_yDFHC98CZJy2LTms-IwDlM";
+// const API_KEY = "AIzaSyCHUCmpR7cT_yDFHC98CZJy2LTms-IwDlM"; - http://localhost:3000 only
 
 
 const options = [
     {
         label: 'Select Language',
-        value: " "
+        value: null
     },
     {
         label: 'Afrikaans',
@@ -19,6 +19,14 @@ const options = [
     {
         label: 'Arabic',
         value: 'ar'
+    },
+    {
+        label: 'English',
+        value: 'eng'
+    },
+    {
+        label: 'German',
+        value: 'de'
     },
     {
         label: 'Ukrainian',
@@ -49,7 +57,6 @@ const Translate = () => {
                 </div>
             </div>
             <Dropdown
-                placeholder="Select Language"
                 label="Select a Language"
                 options={options}
                 selected={language}

@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import "./Dropdown.css";
 
 
-const Dropdown = ({ placeholder, label, options, selected, onSelectedChange }) => {
+const Dropdown = ({ label, options, selected, onSelectedChange }) => {
 
     const [open, setOpen] = useState(false);
     const ref = useRef();
@@ -30,14 +30,14 @@ const Dropdown = ({ placeholder, label, options, selected, onSelectedChange }) =
             return null;
         }
 
-        const itemOption = <li key={ option.value }
+        const itemOption =  <li key={ option.value }
             className="dropdown-item"
             onClick={() => onSelectedChange(option)}
         >
             { option.label }
         </li>;
 
-        return (option.label.indexOf("Select") === 0) ? null : itemOption;
+        return (option.label.indexOf("Select") === 0) ? "" : itemOption;
     });
 
 
@@ -65,5 +65,3 @@ const Dropdown = ({ placeholder, label, options, selected, onSelectedChange }) =
 
 
 export default Dropdown;
-
-// <div className="dropdown-divider"></div>

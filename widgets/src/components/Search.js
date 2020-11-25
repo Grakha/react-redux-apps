@@ -46,46 +46,6 @@ const Search = () => {
 
     }, [debouncedTerm]);
 
-
-
-    // useEffect(() => {
-    //
-    //     const search = async() => {
-    //         const { data } = await axios.get('https://en.wikipedia.org/w/api.php',
-    //             {
-    //                 params: {
-    //                     action: 'query',
-    //                     list: 'search',
-    //                     origin: '*',
-    //                     format: 'json',
-    //                     srsearch: term
-    //                 }
-    //             });
-    //
-    //         setResults(data.query.search);
-    //     };
-    //
-    //
-    //     if (term === "") {
-    //         setResults([]);
-    //     } else if (term && !results.length) {
-    //         search();
-    //     } else {
-    //         const timeoutId = setTimeout(() => {
-    //             if (term) {
-    //                 search();
-    //             }
-    //
-    //         }, 1000);
-    //
-    //         return () => {
-    //             clearTimeout(timeoutId);
-    //         };
-    //     }
-    // // eslint-disable-next-line react-hooks/exhaustive-deps
-    // }, [term]);
-
-
     const renderedResult = results.map((result) => {
         return (
             <li key={ result.pageid } className="list-group-item">
