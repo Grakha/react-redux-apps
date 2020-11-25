@@ -19,7 +19,6 @@ body {
 
 .label-elem {
     width: 100%;
-    padding: .85rem .75rem;
 }
 
 .label-elem .label {
@@ -57,10 +56,6 @@ body {
     padding: .75rem 1.5rem;
     border-bottom: 1px solid rgba(0,0,0,.15);
 }
-
-/*.dropdown-menu .dropdown-item:first-child:empty {*/
-/*    display: none;*/
-/*}*/
 
 .dropdown-menu .dropdown-item:active {
     color: #212529;

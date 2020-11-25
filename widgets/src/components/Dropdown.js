@@ -2,21 +2,26 @@ import React, { useState, useEffect, useRef } from 'react';
 import "./Dropdown.css";
 
 
-const Dropdown = ({ options, selected, onSelectedChange }) => {
+const Dropdown = ({ placeholder, label, options, selected, onSelectedChange }) => {
 
     const [open, setOpen] = useState(false);
     const ref = useRef();
 
     useEffect(() => {
 
-        document.body.addEventListener('click',(event) => {
+        const onBodyClick = (event) => {
             if(ref.current && ref.current.contains(event.target)) {
                 return;
             }
 
             setOpen(false);
+        };
 
-        }, {capture: true});
+        document.body.addEventListener('click', onBodyClick, {capture: true});
+
+        return () => {
+            document.body.removeEventListener('click', onBodyClick);
+        };
 
     }, []);
 
@@ -32,14 +37,14 @@ const Dropdown = ({ options, selected, onSelectedChange }) => {
             { option.label }
         </li>;
 
-        return (option.label === "Select Color") ? "" : itemOption;
+        return (option.label.indexOf("Select") === 0) ? null : itemOption;
     });
 
 
     return (
-        <div ref={ref} className="form">
+        <div ref={ref} className="form-group">
             <div className="label-elem">
-                <label className="label">Select a Color</label>
+                <label className="label">{ label }</label>
             </div>
             <div
                 onClick={() => setOpen(!open)}

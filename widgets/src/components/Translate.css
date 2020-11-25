@@ -1,0 +1,4 @@
+.input-group-sm .input-sm:focus {
+    border: 1px solid rgba(0,0,0,.15);
+    box-shadow: 0 0px 3px 0 rgba(34,36,38,.15);
+}
