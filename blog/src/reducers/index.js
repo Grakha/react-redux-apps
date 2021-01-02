@@ -1,6 +1,9 @@
 import { combineReducers } from 'redux';
+import postsReducer from './postsReducer';
+import usersReducer from './usersReducer';
 
 
 export default combineReducers({
-    fake: () => "it is a fake replace me"
+    posts: postsReducer,
+    users: usersReducer
 });
